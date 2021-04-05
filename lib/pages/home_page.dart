@@ -242,9 +242,11 @@ class _HomePageState extends State<HomePage> {
                           onPressed: () {
                             controller.verOriginal = !controller.verOriginal;
                           },
-                          child: Text(controller.verOriginal
-                              ? 'Ver imagem alterada'
-                              : 'Ver imagem original'),
+                          child: Observer(builder: (_) {
+                            return Text(controller.verOriginal
+                                ? 'Ver imagem alterada'
+                                : 'Ver imagem original');
+                          }),
                         ),
                       ),
                     ],
